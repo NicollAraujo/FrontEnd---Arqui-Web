@@ -3,6 +3,7 @@ package pe.edu.upc.aaw.redcorp_application.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.redcorp_application.entities.Tarea;
+import pe.edu.upc.aaw.redcorp_application.entities.TareaMiembroArea;
 import pe.edu.upc.aaw.redcorp_application.repositories.ITareaRepository;
 import pe.edu.upc.aaw.redcorp_application.serviceinterfaces.ITareaService;
 
@@ -25,11 +26,16 @@ public class TareaServiceImplement  implements ITareaService {
 
     @Override
     public void delete(int idTarea) {
-
+      tareaRepository.deleteById(idTarea);
     }
 
     @Override
     public Tarea listId(int idTarea) {
-        return null;
+        return  tareaRepository.findById(idTarea).orElse(new Tarea());
+    }
+
+    @Override
+    public List<String[]> descripcionTareaByProyectoName() {
+        return tareaRepository.descripcionTareaByProyectoName();
     }
 }

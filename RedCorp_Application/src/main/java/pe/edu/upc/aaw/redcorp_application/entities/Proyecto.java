@@ -15,7 +15,7 @@ public class Proyecto {
     private String descripcion;
     @ManyToOne
     @JoinColumn(name = "usuarioId")
-    Usuario usuario;
+    private Usuario usuario;
     @Column (name = "fechaCreacion",nullable = false)
     private LocalDate fechaCreacion;
 

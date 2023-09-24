@@ -23,12 +23,12 @@ public class UsuarioImplements implements IUsuarioService {
     }
 
     @Override
-    public void delete(int idUsuario) {
+    public void delete(Long idUsuario) {
         iU.deleteById(idUsuario);
     }
 
     @Override
-    public Usuario listId(int idUsuario) {
+    public Usuario listId(Long idUsuario) {
         return iU.findById(idUsuario).orElse(new Usuario());
     }
 }

@@ -13,15 +13,15 @@ public class TareaMiembroArea {
     MiembroDeArea miembroDeArea;
     @ManyToOne
     @JoinColumn(name = "tareaId")
-    TareaMiembroArea tareaMiembroArea;
+    Tarea tarea;
 
     public TareaMiembroArea() {
     }
 
-    public TareaMiembroArea(int idTareaMiembroArea, MiembroDeArea miembroDeArea, TareaMiembroArea tareaMiembroArea) {
+    public TareaMiembroArea(int idTareaMiembroArea, MiembroDeArea miembroDeArea, Tarea tarea) {
         this.idTareaMiembroArea = idTareaMiembroArea;
         this.miembroDeArea = miembroDeArea;
-        this.tareaMiembroArea = tareaMiembroArea;
+        this.tarea = tarea;
     }
 
     public int getIdTareaMiembroArea() {
@@ -40,11 +40,11 @@ public class TareaMiembroArea {
         this.miembroDeArea = miembroDeArea;
     }
 
-    public TareaMiembroArea getTareaMiembroArea() {
-        return tareaMiembroArea;
+    public Tarea getTarea() {
+        return tarea;
     }
 
-    public void setTareaMiembroArea(TareaMiembroArea tareaMiembroArea) {
-        this.tareaMiembroArea = tareaMiembroArea;
+    public void setTarea(Tarea tarea) {
+        this.tarea = tarea;
     }
 }

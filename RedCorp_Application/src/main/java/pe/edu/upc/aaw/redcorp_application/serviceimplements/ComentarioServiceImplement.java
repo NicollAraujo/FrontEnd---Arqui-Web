@@ -3,6 +3,7 @@ package pe.edu.upc.aaw.redcorp_application.serviceimplements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pe.edu.upc.aaw.redcorp_application.entities.Comentario;
+import pe.edu.upc.aaw.redcorp_application.entities.Tarea;
 import pe.edu.upc.aaw.redcorp_application.repositories.IComentarioRepository;
 import pe.edu.upc.aaw.redcorp_application.repositories.ITareaRepository;
 import pe.edu.upc.aaw.redcorp_application.serviceinterfaces.IComentarioService;
@@ -28,11 +29,17 @@ public class ComentarioServiceImplement implements IComentarioService {
 
     @Override
     public void delete(int idComentario) {
-
+        commentRepository.deleteById(idComentario);
     }
 
     @Override
     public Comentario listId(int idComentario) {
-        return null;
+        return  commentRepository.findById(idComentario).orElse(new Comentario());
     }
+
+    @Override
+    public List<String[]> idCommentNameTask() {
+        return commentRepository.idCommentNameTask();
+    }
+
 }

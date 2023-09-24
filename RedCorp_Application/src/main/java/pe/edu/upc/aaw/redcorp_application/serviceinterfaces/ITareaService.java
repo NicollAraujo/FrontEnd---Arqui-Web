@@ -10,4 +10,6 @@ public interface ITareaService {
     public List<Tarea> list();
     public void delete(int idTarea);
     public Tarea listId(int idTarea);
+
+    public List<String[]> descripcionTareaByProyectoName();
 }

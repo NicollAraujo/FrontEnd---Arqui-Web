@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 public class UsuarioDTO {
-    private  int idUsuario;
+    private  Long idUsuario;
     private  String nombre;
     private String correo;
     private LocalDate fechaNacimiento;
@@ -15,7 +15,7 @@ public class UsuarioDTO {
     public UsuarioDTO() {
     }
 
-    public UsuarioDTO(int idUsuario, String nombre, String correo, LocalDate fechaNacimiento, Rol rol) {
+    public UsuarioDTO(Long idUsuario, String nombre, String correo, LocalDate fechaNacimiento, Rol rol) {
         this.idUsuario = idUsuario;
         this.nombre = nombre;
         this.correo = correo;
@@ -23,11 +23,11 @@ public class UsuarioDTO {
         this.rol = rol;
     }
 
-    public int getIdUsuario() {
+    public Long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(int idUsuario) {
+    public void setIdUsuario(Long idUsuario) {
         this.idUsuario = idUsuario;
     }
 

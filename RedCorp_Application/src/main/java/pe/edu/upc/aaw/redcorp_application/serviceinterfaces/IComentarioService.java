@@ -9,4 +9,5 @@ public interface IComentarioService {
     public List<Comentario> list();
     public void delete(int idComentario);
     public Comentario listId(int idComentario);
+    public List<String[]> idCommentNameTask();
 }

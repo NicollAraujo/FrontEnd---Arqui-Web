@@ -1,28 +1,21 @@
-package pe.edu.upc.aaw.redcorp_application.entities;
+package pe.edu.upc.aaw.redcorp_application.dtos;
 
-import javax.persistence.*;
+import pe.edu.upc.aaw.redcorp_application.entities.Proyecto;
+
+import javax.persistence.Column;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "GrupoDeProyecto")
-public class GrupoDeProyecto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+public class GrupoDeProyectoDTO {
     private int idGrupoDeProyecto;
-    @Column(name = "nombre",length = 100,nullable = false)
     private String nombre;
-    @Column(name= "fechaCreacion",nullable = false)
     private LocalDate fechaCreacion;
 
-    @ManyToOne
-    @JoinColumn(name = "proyectoId")
     Proyecto proyecto;
 
-    public GrupoDeProyecto() {
+    public GrupoDeProyectoDTO() {
     }
 
-    public GrupoDeProyecto(int idGrupoDeProyecto, String nombre, LocalDate fechaCreacion, Proyecto proyecto) {
+    public GrupoDeProyectoDTO(int idGrupoDeProyecto, String nombre, LocalDate fechaCreacion, Proyecto proyecto) {
         this.idGrupoDeProyecto = idGrupoDeProyecto;
         this.nombre = nombre;
         this.fechaCreacion = fechaCreacion;

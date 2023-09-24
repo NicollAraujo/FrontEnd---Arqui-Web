@@ -2,6 +2,7 @@ package pe.edu.upc.aaw.redcorp_application.controllers;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.aaw.redcorp_application.dtos.RolDTO;
 import pe.edu.upc.aaw.redcorp_application.dtos.UsuarioDTO;
@@ -26,6 +27,7 @@ public class UsuarioController {
         iU.insert(r);
     }
     @GetMapping
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<UsuarioDTO> listar()
     {
         return iU.list().stream().map(x->{
@@ -34,13 +36,15 @@ public class UsuarioController {
         }).collect(Collectors.toList());
     }
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id") Integer id)
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public void eliminar(@PathVariable("id") Long id)
     {
         iU.delete(id);
     }
 
     @GetMapping("/{id}")
-    public UsuarioDTO listarId(@PathVariable("id") Integer id)
+    @PreAuthorize("hasAuthority('ADMIN')")
+    public UsuarioDTO listarId(@PathVariable("id") Long id)
     {
         ModelMapper m = new ModelMapper();
 
