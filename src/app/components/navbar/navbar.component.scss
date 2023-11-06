@@ -1,8 +1,4 @@
-a{
-    font-size: 1.2rem;
-    color: white !important;
-    flex:1
-}
+
 .wrapper-image{
     flex:0.5;
     img {
@@ -17,4 +13,10 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    button{
+        color: white;
+    }
+    .container-buttons{
+        flex: 1;
+    }
 }

@@ -29,6 +29,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTableModule } from '@angular/material/table';
 import { AuthInterceptor } from './interceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
+import { ListaUsuarioComponent } from './components/usuario/lista-usuario/lista-usuario.component';
+import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuario/creaedita-usuario.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +45,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     ListarAreatrabajoComponent,
     CreaeditaAreatrabajoComponent,
     NavbarComponent,
+    UsuarioComponent,
+    ListaUsuarioComponent,
+    CreaeditaUsuarioComponent,
   ],
   imports: [
     BrowserModule,
