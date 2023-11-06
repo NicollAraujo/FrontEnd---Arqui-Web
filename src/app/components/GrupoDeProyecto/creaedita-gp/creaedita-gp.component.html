@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de Grupos de Proyecto</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>ID_GrupoDeProyecto</mat-label>
+          <input matInput placeholder="Id" formControlName="idGrupoDeProyecto" />
+        </mat-form-field>
+
+        <br/>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input
+            matInput
+            placeholder="NombreGP"
+            formControlName="nombre"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('nombre')?.errors?.['required']">
+            El nombre es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br/>
+
+        <mat-form-field appearance="fill" class="example-full-width">
+          <input
+            matInput
+            placeholder="Ingrese fecha"
+            [matDatepicker]="picker"
+            formControlName="fechaCreacion"
+            [max]="maxFecha"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker">
+        </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="obtenerControlCampo('fechaCreacion')?.errors?.['required']"> 
+            La fecha de creación es obligatoria
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <mat-label>Proyecto</mat-label>
+          <mat-select formControlName="proyecto">
+            <mat-option
+              *ngFor="let p of listaproyectos"
+              [value]="p.idProyecto">
+              {{ p.nombre }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="obtenerControlCampo('proyecto')?.errors?.['required']">
+            El proyecto es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/grupos">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>
