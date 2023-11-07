@@ -55,3 +55,4 @@ export class ListarAreatrabajoComponent {
     
   }
 }
+///lsitar ts
