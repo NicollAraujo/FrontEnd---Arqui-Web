@@ -52,13 +52,8 @@ export class CreaeditaTareaComponent implements OnInit {
       descripcion: ['', Validators.required],
       fechaCreacion: ['', Validators.required],
       fechaLimite: ['', Validators.required],
-<<<<<<< HEAD
       //grupoDeProyecto_id: ['', Validators.required],
       //Proyecto_id: ['', Validators.required]
-=======
-      grupoDeProyecto_id: ['', Validators.required],
-      Proyecto_id: ['', Validators.required]
->>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
     });
     /*this.gpS.list().subscribe((data) => {
       this.listGrupoProyecto = data;
