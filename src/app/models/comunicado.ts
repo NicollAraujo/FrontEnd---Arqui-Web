@@ -1,6 +1,6 @@
 import { GP } from "./gp"
 import { LoginUsuario } from "./login-usuario"
-//import { AreaDeTrabajo } from "./areadetrabajo"
+import { AreaDeTrabajo } from "./areadetrabajo"
 
 export class Comunicado{
     idComunicado:number=0
@@ -11,5 +11,3 @@ export class Comunicado{
     areadetrabajo:AreaDeTrabajo=new AreaDeTrabajo()
     GrupoDeProyecto:GP = new GP()
 }
-
-//AGREGAR LAS IMPORTACIONES DE LAS CLASES QUE FALTAN

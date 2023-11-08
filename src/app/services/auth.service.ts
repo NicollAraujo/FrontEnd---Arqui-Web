@@ -29,9 +29,9 @@ export class AuthService {
   }
 
   public showUser(){
-    let headers = new HttpHeaders()
-    .set("Authorization",`Bearer ${localStorage.getItem('jwttoken')}`)
-    console.log(headers)
-    return this.http.get("api/areasdetrabajo/panel",{headers})
+    // let headers = new HttpHeaders()
+    // .set("Authorization",`Bearer ${localStorage.getItem('jwttoken')}`)
+    // console.log(headers)
+    return this.http.get("api/areasdetrabajo/panel")
   }
 }

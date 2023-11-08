@@ -8,6 +8,9 @@ import { GpComponent } from './components/GrupoDeProyecto/gp/gp.component';
 import { CreaeditaGpComponent } from './components/GrupoDeProyecto/creaedita-gp/creaedita-gp.component';
 import { ComunicadoComponent } from './components/Comunicado/comunicado/comunicado.component';
 import { CreaeditaComunicadoComponent } from './components/Comunicado/creaedita-comunicado/creaedita-comunicado.component';
+import { RolComponent } from './components/rol/rol.component';
+import { CreaeditaAreatrabajoComponent } from './components/areatrabajo/creaedita-areatrabajo/creaedita-areatrabajo.component';
+import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-rol.component';
 
 const routes: Routes = [
   {path:'home',component:HomeComponent},
@@ -33,6 +36,15 @@ const routes: Routes = [
     ],
   },
 
+  {
+    path: 'roles',
+    component: RolComponent,
+    children: [
+      { path: 'nuevo', component: CreaeditaRolComponent },
+      { path: 'ediciones/:id', component: CreaeditaRolComponent },
+    ],
+  },
+  {path:'**',pathMatch:'full',redirectTo:'home'}
 ];
 
 @NgModule({

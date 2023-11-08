@@ -20,6 +20,7 @@ export class PanelComponent implements OnInit {
   ngOnInit(): void {   
     this.authService.showUser().subscribe((result:any) => {
       this.data = result;
+      console.log(this.data)
     });
   }
 }
