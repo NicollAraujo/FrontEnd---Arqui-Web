@@ -38,12 +38,12 @@
             <input
               matInput
               placeholder="Descripcion"
-              formControlName="Descripcion"
+              formControlName="descripcion"
             />
             <mat-error
-              *ngIf="obtenerControlCampo('Descripcion')?.errors?.['required']"
+              *ngIf="obtenerControlCampo('descripcion')?.errors?.['required']"
             >
-            El correo es obligatorio.
+            La descripcion es obligatoria.
             </mat-error>
           </mat-form-field>
           <br />
@@ -90,43 +90,11 @@
             </mat-error>
           </mat-form-field>
           <br />
-          <mat-form-field class="example-full-width">
-            <mat-label>GrupoDeProyecto_id</mat-label>
-            <mat-select formControlName="grupoDeProyecto_id">
-              <mat-option
-                *ngFor="let p of listGrupoProyecto"
-                [value]="p.idGrupoProyecto"
-              >
-                {{ p.descripcion }}
-              </mat-option>
-            </mat-select>
-            <mat-error
-              *ngIf="obtenerControlCampo('grupoDeProyecto_id')?.errors?.['required']"
-            >
-              El ID del Grupo de Proyecto es obligatorio.
-            </mat-error>
-          </mat-form-field>
-          <br />
-         <mat-form-field class="example-full-width">
-            <mat-label>Proyecto_id</mat-label>
-            <mat-select formControlName="Proyecto_id">
-              <mat-option
-                *ngFor="let p of listProyecto"
-                [value]="p.idProyecto"
-              >
-                {{ p.descripcion }}
-              </mat-option>
-            </mat-select>
-            <mat-error
-              *ngIf="obtenerControlCampo('Proyecto_id')?.errors?.['required']"
-            >
-              El ID del Proyecto es obligatorio.
-            </mat-error>
-          </mat-form-field>
-          <br />
+          
+         
           <div class="buttons">
               <button mat-raised-button color="accent">Registrar</button>
-              <button mat-raised-button color="warn" routerLink="/tareas">
+              <button mat-raised-button color="warn" routerLink="/tarea">
                 Cancelar
               </button>
           </div>

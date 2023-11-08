@@ -23,6 +23,8 @@
     <mat-menu #person="matMenu">
       <button mat-menu-item [matMenuTriggerFor]="usuario">Usuario</button>
       <button mat-menu-item [matMenuTriggerFor]="roles">Rol</button>
+      <button mat-menu-item [matMenuTriggerFor]="tarea">Tarea</button>
+      <button mat-menu-item [matMenuTriggerFor]="comentario">Comentario</button>
       <button mat-menu-item [matMenuTriggerFor]="areatrabajo">
         Area Trabajo
       </button>
@@ -36,6 +38,16 @@
     <mat-menu #roles="matMenu">
       <button mat-menu-item [routerLink]="'/roles/nuevo'">Crear</button>
       <button mat-menu-item [routerLink]="'/roles'">Listar</button>
+    </mat-menu>
+
+    <mat-menu #tarea="matMenu">
+      <button mat-menu-item [routerLink]="'/tarea/nuevo'">Crear</button>
+      <button mat-menu-item [routerLink]="'/tarea'">Listar</button>
+    </mat-menu>
+
+    <mat-menu #comentario="matMenu">
+      <button mat-menu-item [routerLink]="'/comentario/nuevo'">Crear</button>
+      <button mat-menu-item [routerLink]="'/comentario'">Listar</button>
     </mat-menu>
 
     <mat-menu #areatrabajo="matMenu">
