@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <app-navbar></app-navbar>
+    <div class="container" style="text-align: center">
+        <h1>Registro de Tarea</h1>
+        <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+          <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>idTarea</mat-label>
+            <input matInput placeholder="Id" formControlName="idTarea" readonly=""/>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="example-full-width">
+
+           
+            <mat-label>Nombre</mat-label>
+            <input
+              matInput
+              placeholder="Nombre"
+              formControlName="nombre"
+            />
+            <mat-error
+              *ngIf="obtenerControlCampo('nombre')?.errors?.['required']"
+            >
+              El nombre es obligatorio.
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field class="example-full-width">
+            <mat-label>Descripción</mat-label>
+            <input
+              matInput
+              placeholder="Descripcion"
+              formControlName="descripcion"
+            />
+            <mat-error
+              *ngIf="obtenerControlCampo('descripcion')?.errors?.['required']"
+            >
+            La descripción es obligatoria.
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field appearance="fill" class="example-full-width">
+            <input
+              matInput
+              placeholder="Ingrese fecha de creación"
+              [matDatepicker]="pickerr"
+              formControlName="fechaCreacion"
+              [max]="formattedMaxDate"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="pickerr"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #pickerr></mat-datepicker>
+            <mat-error
+              *ngIf="obtenerControlCampo('fechaCreacion')?.errors?.['required']"
+            >
+              La fecha de creación es obligatoria.
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <mat-form-field appearance="fill" class="example-full-width">
+            <input
+              matInput
+              placeholder="Ingrese fecha límite"
+              [matDatepicker]="picker"
+              formControlName="fechaLimite"
+              [max]="formattedMaxDate"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error
+              *ngIf="obtenerControlCampo('fechaLimite')?.errors?.['required']"
+            >
+              La fecha límite es obligatoria.
+            </mat-error>
+          </mat-form-field>
+          <br />
+          
+    
+          <div class="buttons">
+              <button mat-raised-button color="accent">Registrar</button>
+              <button mat-raised-button color="warn" routerLink="/tarea">
+                Cancelar
+              </button>
+          </div>
+          <p>{{ mensaje }}</p>
+        </form>
+      </div>
+</body>
+</html>
+
+
