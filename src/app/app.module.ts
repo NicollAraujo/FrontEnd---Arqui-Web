@@ -1,27 +1,56 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { FormsModule } from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
-import {JWT_OPTIONS, JwtHelperService} from '@auth0/angular-jwt';
-import { PanelComponent } from './components/panel/panel.component'
+import { HttpClientModule } from '@angular/common/http';
+import { GpComponent } from './components/GrupoDeProyecto/gp/gp.component';
+import { ListarGpComponent } from './components/GrupoDeProyecto/listar-gp/listar-gp.component';
+import { CreaeditaGpComponent } from './components/GrupoDeProyecto/creaedita-gp/creaedita-gp.component';
+import { ComunicadoComponent } from './components/Comunicado/comunicado/comunicado.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ListarComunicadoComponent } from './components/Comunicado/listar-comunicado/listar-comunicado.component';
+import { CreaeditaComunicadoComponent } from './components/Comunicado/creaedita-comunicado/creaedita-comunicado.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    LoginComponent,
-    PanelComponent
+    GpComponent,
+    ListarGpComponent,
+    CreaeditaGpComponent,
+    ComunicadoComponent,
+    ListarComunicadoComponent,
+    CreaeditaComunicadoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
     FormsModule,
-    HttpClientModule
+    ReactiveFormsModule,
   ],
   providers: [
     {provide:JWT_OPTIONS,useValue:JWT_OPTIONS},
