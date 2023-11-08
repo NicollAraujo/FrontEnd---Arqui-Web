@@ -32,6 +32,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ListaUsuarioComponent } from './components/usuario/lista-usuario/lista-usuario.component';
 import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuario/creaedita-usuario.component';
+import { MiembroareaComponent } from './components/miembroarea/miembroarea.component';
+import { CreaeditaMiembroareaComponent } from './components/miembroarea/creaedita-miembroarea/creaedita-miembroarea.component';
+import { ListarMiembroareaComponent } from './components/miembroarea/listar-miembroarea/listar-miembroarea.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +51,9 @@ import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuari
     UsuarioComponent,
     ListaUsuarioComponent,
     CreaeditaUsuarioComponent,
+    MiembroareaComponent,
+    CreaeditaMiembroareaComponent,
+    ListarMiembroareaComponent
   ],
   imports: [
     BrowserModule,

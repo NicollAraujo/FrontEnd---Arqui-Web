@@ -10,6 +10,8 @@ import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-
 import { AreatrabajoComponent } from './components/areatrabajo/areatrabajo.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuario/creaedita-usuario.component';
+import { MiembroareaComponent } from './components/miembroarea/miembroarea.component';
+import { CreaeditaMiembroareaComponent } from './components/miembroarea/creaedita-miembroarea/creaedita-miembroarea.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -37,6 +39,14 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaUsuarioComponent },
       { path: 'ediciones/:id', component: CreaeditaUsuarioComponent },
+    ],
+  },
+  {
+    path: 'miembroArea',
+    component: MiembroareaComponent,
+    children: [
+      { path: 'nuevo', component: CreaeditaMiembroareaComponent },
+      { path: 'ediciones/:id', component: CreaeditaMiembroareaComponent },
     ],
   },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
