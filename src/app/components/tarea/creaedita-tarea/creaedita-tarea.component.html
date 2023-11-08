@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+<!-- <!DOCTYPE html>
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -32,6 +36,7 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
+<<<<<<< HEAD
             <mat-label>Descripción</mat-label>
             <input
               matInput
@@ -42,6 +47,18 @@
               *ngIf="obtenerControlCampo('descripcion')?.errors?.['required']"
             >
             La descripción es obligatoria.
+=======
+            <mat-label>Descripcion</mat-label>
+            <input
+              matInput
+              placeholder="Descripcion"
+              formControlName="Descripcion"
+            />
+            <mat-error
+              *ngIf="obtenerControlCampo('Descripcion')?.errors?.['required']"
+            >
+            El correo es obligatorio.
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
             </mat-error>
           </mat-form-field>
           <br />
@@ -49,16 +66,26 @@
             <input
               matInput
               placeholder="Ingrese fecha de creación"
+<<<<<<< HEAD
               [matDatepicker]="pickerr"
+=======
+              [matDatepicker]="picker"
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
               formControlName="fechaCreacion"
               [max]="formattedMaxDate"
             />
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle
               matIconSuffix
+<<<<<<< HEAD
               [for]="pickerr"
             ></mat-datepicker-toggle>
             <mat-datepicker #pickerr></mat-datepicker>
+=======
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
             <mat-error
               *ngIf="obtenerControlCampo('fechaCreacion')?.errors?.['required']"
             >
@@ -87,11 +114,51 @@
             </mat-error>
           </mat-form-field>
           <br />
+<<<<<<< HEAD
           
     
           <div class="buttons">
               <button mat-raised-button color="accent">Registrar</button>
               <button mat-raised-button color="warn" routerLink="/tarea">
+=======
+          <mat-form-field class="example-full-width">
+            <mat-label>GrupoDeProyecto_id</mat-label>
+            <mat-select formControlName="grupoDeProyecto_id">
+              <mat-option
+                *ngFor="let p of listGrupoProyecto"
+                [value]="p.idGrupoProyecto"
+              >
+                {{ p.descripcion }}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="obtenerControlCampo('grupoDeProyecto_id')?.errors?.['required']"
+            >
+              El ID del Grupo de Proyecto es obligatorio.
+            </mat-error>
+          </mat-form-field>
+          <br />
+         <mat-form-field class="example-full-width">
+            <mat-label>Proyecto_id</mat-label>
+            <mat-select formControlName="Proyecto_id">
+              <mat-option
+                *ngFor="let p of listProyecto"
+                [value]="p.idProyecto"
+              >
+                {{ p.descripcion }}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="obtenerControlCampo('Proyecto_id')?.errors?.['required']"
+            >
+              El ID del Proyecto es obligatorio.
+            </mat-error>
+          </mat-form-field>
+          <br />
+          <div class="buttons">
+              <button mat-raised-button color="accent">Registrar</button>
+              <button mat-raised-button color="warn" routerLink="/tareas">
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
                 Cancelar
               </button>
           </div>
@@ -102,3 +169,8 @@
 </html>
 
 
+<<<<<<< HEAD
+=======
+-->
+
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb

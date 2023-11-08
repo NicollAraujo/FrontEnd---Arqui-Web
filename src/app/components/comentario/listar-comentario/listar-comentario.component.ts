@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import { Component,OnInit, ViewChild } from '@angular/core';
 import { Comentario } from '../../../models/comentario';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { ComentarioService } from 'src/app/services/comentario.service';
+=======
+import { Component } from '@angular/core';
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
 
 @Component({
   selector: 'app-listar-comentario',
@@ -10,6 +14,7 @@ import { ComentarioService } from 'src/app/services/comentario.service';
   styleUrls: ['./listar-comentario.component.scss']
 })
 export class ListarComentarioComponent {
+<<<<<<< HEAD
   comentario: Comentario = new Comentario();
   dataSource:MatTableDataSource<Comentario>=new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -52,4 +57,7 @@ export class ListarComentarioComponent {
     })
     
   }
+=======
+
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
 }

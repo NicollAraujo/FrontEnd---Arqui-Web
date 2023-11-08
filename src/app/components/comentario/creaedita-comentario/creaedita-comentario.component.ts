@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+<<<<<<< HEAD
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Comentario } from 'src/app/models/comentario';
 import { ComentarioService } from 'src/app/services/comentario.service';
 import { TareaService } from 'src/app/services/tarea.service';
+=======
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
 
 @Component({
   selector: 'app-creaedita-comentario',
@@ -11,6 +14,7 @@ import { TareaService } from 'src/app/services/tarea.service';
   styleUrls: ['./creaedita-comentario.component.scss']
 })
 export class CreaeditaComentarioComponent {
+<<<<<<< HEAD
   form: FormGroup = new FormGroup({});
   Comentario: Comentario = new Comentario();
   comentario: string = '';
@@ -88,4 +92,7 @@ export class CreaeditaComentarioComponent {
     }
     return control;
   }
+=======
+
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
 }

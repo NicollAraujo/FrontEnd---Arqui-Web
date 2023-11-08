@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 import { Component,OnInit, ViewChild } from '@angular/core';
 import { Tarea } from 'src/app/models/tarea';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { TareaService } from '../../../services/tarea.service';
+=======
+import { Component } from '@angular/core';
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
 
 @Component({
   selector: 'app-listar-tarea',
@@ -10,6 +14,7 @@ import { TareaService } from '../../../services/tarea.service';
   styleUrls: ['./listar-tarea.component.scss']
 })
 export class ListarTareaComponent {
+<<<<<<< HEAD
   tarea: Tarea = new Tarea();
   dataSource:MatTableDataSource<Tarea>=new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -56,4 +61,7 @@ export class ListarTareaComponent {
     })
     
   }
+=======
+
+>>>>>>> 7337e6d3923104a52dd9222e7cead6ab39d9b8fb
 }
