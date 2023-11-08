@@ -13,10 +13,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'panel',component:PanelComponent,canActivate:[authGuard]},
-  {path:'**',pathMatch:'full',redirectTo:'home'}
-];
+  {path:'**',pathMatch:'full',redirectTo:'home'},
 
-const routes: Routes = [
   {
     path: 'grupos',
     component: GpComponent,
