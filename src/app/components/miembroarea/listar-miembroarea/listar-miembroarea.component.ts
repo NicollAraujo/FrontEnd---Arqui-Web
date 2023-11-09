@@ -21,20 +21,18 @@ export class ListarMiembroareaComponent {
   constructor(private uMa:MiembroareaService)
   {
   }
-  ngOnInit():void{
-    this.uMa.list().subscribe((data) => {
-      data = data.sort((a, b) => a.idMiembroDeArea - b.idMiembroDeArea);
-      const dataFiltrados = data.filter(item => item.active === true);
-      this.dataSource = new MatTableDataSource(dataFiltrados);
-      this.dataSource.paginator = this.paginator;
-    });
-    this.uMa.getList().subscribe((data) => {
-      data = data.sort((a, b) => a.idMiembroDeArea - b.idMiembroDeArea);
-      const dataFiltrados = data.filter(item => item.active === true);
-      this.dataSource = new MatTableDataSource(dataFiltrados);
-      this.dataSource.paginator = this.paginator;
-    });
-  }
+ngOnInit(): void {
+  this.uMa.list().subscribe((data) => {
+    const dataFiltrados = data.filter(item => item.active === true);
+    this.dataSource = new MatTableDataSource(dataFiltrados);
+    this.dataSource.paginator = this.paginator;
+  });
+  this.uMa.getList().subscribe((data) => {
+    const dataFiltrados = data.filter(item => item.active === true);
+    this.dataSource = new MatTableDataSource(dataFiltrados);
+    this.dataSource.paginator = this.paginator;
+  } );
+}
   eliminar(id:number){
 
     this.uMa.listId(id).subscribe((miembroArea)=>

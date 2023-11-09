@@ -13,6 +13,7 @@ import { AreaDeTrabajo } from 'src/app/models/areadetrabajo';
 import { AreadetrabajoService } from 'src/app/services/areadetrabajo.service';
 import { MiembroDeArea } from 'src/app/models/miembroarea';
 import { MiembroareaService } from 'src/app/services/miembroarea.service';
+import { forkJoin, switchMap } from 'rxjs';
 @Component({
   selector: 'app-creaedita-miembroarea',
   templateUrl: './creaedita-miembroarea.component.html',
@@ -55,24 +56,45 @@ export class CreaeditaMiembroareaComponent {
   aceptar(): void {
     this.aS
       .listId(this.form.value.areaDeTrabajo)
-      .subscribe((areaTrabajoSelect) => {
-        if (this.form.valid) {
-          this.miembroArea.idMiembroDeArea = this.form.value.idMiembroDeArea;
-          this.miembroArea.usuario = this.form.value.usuario;
-          this.miembroArea.areaDeTrabajo = areaTrabajoSelect;
-        } else {
-          this.mensaje = 'Por favor complete todos los campos obligatorios.';
-        }
+      .subscribe((AreaTrabajoSelect) => {
+        this.uS.listId(this.form.value.usuario).subscribe((UsuarioSelect) => {
+          if (this.form.valid) {
+            this.miembroArea.idMiembroDeArea = this.form.value.idProyecto;
+            this.miembroArea.usuario = UsuarioSelect;
+            this.miembroArea.areaDeTrabajo = AreaTrabajoSelect;
+            this.miembroArea.active = true;
+            if (this.edicion) {
+              this.maS.update(this.miembroArea).subscribe(() => {
+                this.maS.list().subscribe((data) => {
+                  this.maS.setList(data);
+
+                });
+              });
+            } else {
+              this.maS.insert(this.miembroArea).subscribe((data) => {
+                this.maS.list().subscribe((data) => {
+                  this.maS.setList(data);
+                });
+              });
+            }
+
+            this.router.navigate(['miembroArea']);
+          } else {
+            this.mensaje = 'Por favor complete todos los campos obligatorios.';
+          }
+        });
       });
   }
+
 
   init() {
     if (this.edicion) {
       this.maS.listId(this.id).subscribe((data) => {
+        console.log(data.usuario.nombre)
         this.form = new FormGroup({
           idMiembroDeArea: new FormControl(data.idMiembroDeArea),
-          usuario: new FormControl(data.usuario),
-          areaDeTrabajo: new FormControl(data.areaDeTrabajo),
+          usuario: new FormControl(data.usuario.idUsuario),
+          areaDeTrabajo: new FormControl(data.areaDeTrabajo.idAreaDeTrabajo),
         });
       });
     }

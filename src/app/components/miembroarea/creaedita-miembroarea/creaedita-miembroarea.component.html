@@ -11,39 +11,49 @@
       <h1>Registro de Miembros de Area</h1>
       <form [formGroup]="form" (submit)="aceptar()" class="example-form">
         <mat-form-field class="example-full-width" *ngIf="edicion">
-          <mat-label>idMiembroDeArea</mat-label>
-          <input matInput placeholder="Id" formControlName="idMiembroDeArea" readonly=""/>
+            <mat-label>idMiembroDeArea</mat-label>
+            <input matInput placeholder="Id" formControlName="idMiembroDeArea" readonly=""/>
         </mat-form-field>
         <br />
         <mat-form-field class="example-full-width">
-          <mat-label>Usuarios</mat-label>
-          <mat-select formControlName="usuario">
-            <mat-option *ngFor="let p of listUsuarios" [value]="p.idUsuario">
-              {{ p.nombre }}
-            </mat-option>
-          </mat-select>
-          <mat-error *ngIf="obtenerControlCampo('rol')?.errors?.['required']">
-            El usuario es obligatorio.
-          </mat-error>
-        </mat-form-field>
-        <br />
-        <mat-form-field class="example-full-width">
-            <mat-label>Areas de Trabajo</mat-label>
-            <mat-select formControlName="areasTrabajo">
-              <mat-option *ngFor="let p of listAreas" [value]="p.idAreaDeTrabajo">
+            <mat-label>Usuarios</mat-label>
+            <mat-select formControlName="usuario">
+              <mat-option
+                *ngFor="let p of listUsuarios"
+                [value]="p.idUsuario"
+              >
                 {{ p.nombre }}
               </mat-option>
             </mat-select>
-            <mat-error *ngIf="obtenerControlCampo('rol')?.errors?.['required']">
-              El Area de Trabajo es obligatorio.
+            <mat-error
+              *ngIf="obtenerControlCampo('usuario')?.errors?.['required']"
+            >
+              El Usuario es obligatorio.
             </mat-error>
           </mat-form-field>
-          <br />
+        <br />
+        <mat-form-field class="example-full-width">
+            <mat-label>Area de Trabajo</mat-label>
+            <mat-select formControlName="areaDeTrabajo">
+              <mat-option
+                *ngFor="let p of listAreas"
+                [value]="p.idAreaDeTrabajo"
+              >
+                {{ p.nombre }}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="obtenerControlCampo('areaDeTrabajo')?.errors?.['required']"
+            >
+              El Area de Trabajo es obligatoria.
+            </mat-error>
+          </mat-form-field>
+        <br />
         <div class="buttons">
-          <button mat-raised-button color="accent">Aceptar</button>
-          <button mat-raised-button color="warn" routerLink="/usuarios">
-            Cancelar
-          </button>
+            <button mat-raised-button color="accent">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/miembroArea">
+              Cancelar
+            </button>
         </div>
         <p>{{ mensaje }}</p>
       </form>
