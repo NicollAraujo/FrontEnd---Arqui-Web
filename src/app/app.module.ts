@@ -32,6 +32,30 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ListaUsuarioComponent } from './components/usuario/lista-usuario/lista-usuario.component';
 import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuario/creaedita-usuario.component';
+import { ProyectoComponent } from './components/proyecto/proyecto.component';
+import { ListarProyectoComponent } from './components/proyecto/listar-proyecto/listar-proyecto.component';
+import { CreaeditaProyectoComponent } from './components/proyecto/creaedita-proyecto/creaedita-proyecto.component';
+import { ComunicadoComponent } from './components/comunicado/comunicado.component';
+import { ListarComunicadoComponent } from './components/comunicado/listar-comunicado/listar-comunicado.component';
+import { CreaeditaComunicadoComponent } from './components/comunicado/creaedita-comunicado/creaedita-comunicado.component';
+import { GrupoDeProyectoComponent } from './components/grupo-de-proyecto/grupo-de-proyecto.component';
+import { ListarGrupoDeProyectoComponent } from './components/grupo-de-proyecto/listar-grupo-de-proyecto/listar-grupo-de-proyecto.component';
+import { CreaditaGrupoproyectoComponent } from './components/grupo-de-proyecto/creadita-grupoproyecto/creadita-grupoproyecto.component';
+import { MiembroDeAreaComponent } from './components/miembro-de-area/miembro-de-area.component';
+import { ListarMiembroareaComponent } from './components/miembro-de-area/listar-miembroarea/listar-miembroarea.component';
+import { CreaeditaMiembroareaComponent } from './components/miembro-de-area/creaedita-miembroarea/creaedita-miembroarea.component';
+import { MiembroGrupoComponent } from './components/miembro-grupo/miembro-grupo.component';
+import { ListarMiembrogrupoComponent } from './components/miembro-grupo/listar-miembrogrupo/listar-miembrogrupo.component';
+import { CreaeditaMiembrogrupoComponent } from './components/miembro-grupo/creaedita-miembrogrupo/creaedita-miembrogrupo.component';
+import { TareaComponent } from './components/tarea/tarea.component';
+import { ListarTareaComponent } from './components/tarea/listar-tarea/listar-tarea.component';
+import { CreaeditaTareaComponent } from './components/tarea/creaedita-tarea/creaedita-tarea.component';
+import { ComentarioComponent } from './components/comentario/comentario.component';
+import { ListarComentarioComponent } from './components/comentario/listar-comentario/listar-comentario.component';
+import { CreaeditaComentarioComponent } from './components/comentario/creaedita-comentario/creaedita-comentario.component';
+import { TareaMiembroAreaComponent } from './components/tarea-miembro-area/tarea-miembro-area.component';
+import { ListarTareaMiembroAreaComponent } from './components/tarea-miembro-area/listar-tarea-miembro-area/listar-tarea-miembro-area.component';
+import { CreaeditaTareaMiembroAreaComponent } from './components/tarea-miembro-area/creaedita-tarea-miembro-area/creaedita-tarea-miembro-area.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +72,30 @@ import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuari
     UsuarioComponent,
     ListaUsuarioComponent,
     CreaeditaUsuarioComponent,
+    ProyectoComponent,
+    ListarProyectoComponent,
+    CreaeditaProyectoComponent,
+    ComunicadoComponent,
+    ListarComunicadoComponent,
+    CreaeditaComunicadoComponent,
+    GrupoDeProyectoComponent,
+    ListarGrupoDeProyectoComponent,
+    CreaditaGrupoproyectoComponent,
+    MiembroDeAreaComponent,
+    ListarMiembroareaComponent,
+    CreaeditaMiembroareaComponent,
+    MiembroGrupoComponent,
+    ListarMiembrogrupoComponent,
+    CreaeditaMiembrogrupoComponent,
+    TareaComponent,
+    ListarTareaComponent,
+    CreaeditaTareaComponent,
+    ComentarioComponent,
+    ListarComentarioComponent,
+    CreaeditaComentarioComponent,
+    TareaMiembroAreaComponent,
+    ListarTareaMiembroAreaComponent,
+    CreaeditaTareaMiembroAreaComponent,
   ],
   imports: [
     BrowserModule,
