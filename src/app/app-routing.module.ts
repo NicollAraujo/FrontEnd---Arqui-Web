@@ -31,19 +31,21 @@ import { GrupoDeProyectoComponent } from './components/grupo-de-proyecto/grupo-d
 import { MiembroDeAreaComponent } from './components/miembro-de-area/miembro-de-area.component';
 import { TareaMiembroAreaComponent } from './components/tarea-miembro-area/tarea-miembro-area.component';
 import { CreaeditaTareaMiembroAreaComponent } from './components/tarea-miembro-area/creaedita-tarea-miembro-area/creaedita-tarea-miembro-area.component';
+import { rolAdminGuard } from './guard/rol-admin.guard';
+import { rolEmploGuard } from './guard/rol-emplo.guard';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'panel', component: PanelComponent, canActivate: [authGuard] },
+  { path: 'panel', component: PanelComponent, canActivate: [rolAdminGuard] },
   {
     path: 'areaTrabajo',
     component: AreatrabajoComponent ,
     children: [
       { path: 'nuevo', component: CreaeditaAreatrabajoComponent },
       { path: 'ediciones/:id', component: CreaeditaAreatrabajoComponent },
-    ],
-    canActivate: [authGuard]
+    ]
+    , canActivate: [rolEmploGuard]
   },
   {
     path: 'roles',
@@ -51,8 +53,7 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaRolComponent },
       { path: 'ediciones/:id', component: CreaeditaRolComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolAdminGuard]
   },
   {
     path: 'usuarios',
@@ -60,8 +61,7 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaUsuarioComponent },
       { path: 'ediciones/:id', component: CreaeditaUsuarioComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolAdminGuard]
   },
   {
     path: 'proyecto',
@@ -69,8 +69,7 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaProyectoComponent },
       { path: 'ediciones/:id', component: CreaeditaProyectoComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolAdminGuard]
   },
   {
     path: 'comunicado',
@@ -78,8 +77,7 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaComunicadoComponent },
       { path: 'ediciones/:id', component: CreaeditaComunicadoComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolEmploGuard]
   },
   {
     path: 'miembrodearea',
@@ -87,8 +85,7 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaMiembroareaComponent },
       { path: 'ediciones/:id', component: CreaeditaMiembroareaComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolEmploGuard]
   },
   {
     path: 'miembrogrupo',
@@ -96,8 +93,7 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaMiembrogrupoComponent },
       { path: 'ediciones/:id', component: CreaeditaMiembrogrupoComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolAdminGuard]
   },
   {
     path: 'grupo-proyecto',
@@ -105,8 +101,7 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaditaGrupoproyectoComponent },
       { path: 'ediciones/:id', component: CreaditaGrupoproyectoComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolAdminGuard]
   },
   {
     path: 'tarea',
@@ -114,8 +109,7 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaTareaComponent },
       { path: 'ediciones/:id', component: CreaeditaTareaComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolEmploGuard]
   },
   {
     path: 'comentario',
@@ -123,8 +117,7 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaComentarioComponent },
       { path: 'ediciones/:id', component: CreaeditaComentarioComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolAdminGuard]
   },
   {
     path: 'tarea-miembro-area',
@@ -132,11 +125,10 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaTareaMiembroAreaComponent },
       { path: 'ediciones/:id', component: CreaeditaTareaMiembroAreaComponent },
-    ],
-    canActivate: [authGuard]
+    ], canActivate: [rolAdminGuard]
   },
   
-  { path: '**', pathMatch: 'full', redirectTo: 'home' },
+  { path: '**', pathMatch: 'full', redirectTo: 'login' },
 ];
 
 @NgModule({

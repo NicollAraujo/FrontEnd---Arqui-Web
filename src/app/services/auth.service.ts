@@ -34,4 +34,14 @@ export class AuthService {
     // console.log(headers)
     return this.http.get("api/areasdetrabajo/panel")
   }
+  showRole(){
+    let token = localStorage.getItem("jwttoken");
+    if (!token) {
+      // Manejar el caso en el que el token es nulo.
+      return null; // O cualquier otro valor predeterminado dependiendo del contexto.
+    }
+    const helper = new JwtHelperService();
+    const decodedToken = helper.decodeToken(token);
+    return decodedToken?.role;
+  }
 }

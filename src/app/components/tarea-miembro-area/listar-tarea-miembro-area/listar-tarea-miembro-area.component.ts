@@ -33,6 +33,7 @@ export class ListarTareaMiembroAreaComponent {
 
   ngOnInit(): void {
     this.tS.list().subscribe((data) => {
+      console.log(data)
       data = data.sort((a, b) => a.idTareaMiembroArea - b.idTareaMiembroArea);
       const dataFiltrados = data.filter(item => item.active === true);
       this.dataSource = new MatTableDataSource(dataFiltrados);

@@ -62,8 +62,8 @@ export class CreaeditaTareaComponent {
   }
 
   aceptar(): void {
-      this.pS.listId(this.form.value.areatrabajo).subscribe((proyectSelect) => {
-        this.gS.listId(this.form.value.usuario).subscribe((grupoSelect) => {
+      this.pS.listId(this.form.value.proyecto).subscribe((proyectSelect) => {
+        this.gS.listId(this.form.value.grupoDeProyecto).subscribe((grupoSelect) => {
           if (this.form.valid) {
             this.tarea.idTarea = this.form.value.idTarea;
             this.tarea.nombre = this.form.value.nombre;

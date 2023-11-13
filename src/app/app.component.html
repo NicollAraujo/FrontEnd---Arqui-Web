@@ -1,2 +1,8 @@
 
-<router-outlet></router-outlet>
+<ng-container *ngIf="shouldShowSideNav()">
+    <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+</ng-container>
+<app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-body>
+<div *ngIf="shouldShowLogin()">
+    <router-outlet></router-outlet>
+</div>

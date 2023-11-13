@@ -12,7 +12,7 @@ export class LoginComponent{
   nombreUsuario!: string;
   password!: string;
   loginUsuario!: LoginUsuario;
- 
+  rol!:string;
 
   constructor(
     private authService:AuthService,
@@ -23,13 +23,19 @@ export class LoginComponent{
   }
 
   onLogin():void {
+
     this.loginUsuario = new LoginUsuario(this.nombreUsuario,this.password)
-    console.log(this.loginUsuario);
     this.authService.login(this.loginUsuario).subscribe((resp:any) => {
-      console.log(resp)
       localStorage.setItem('jwttoken',resp.jwttoken)
-      this.router.navigate(['panel']);
+      this.rol = this.authService.showRole();
+      localStorage.setItem('rol',this.rol);
     })
+    if(localStorage.getItem('rol')==="ADMIN")
+    {
+      this.router.navigate(['panel']);
+    }else{
+      this.router.navigate(['tarea']);
+    }
   }
 
   

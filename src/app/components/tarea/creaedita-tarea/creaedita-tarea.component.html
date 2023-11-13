@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <app-navbar></app-navbar>
     <div class="container" style="text-align: center">
         <h1>Registro de Tarea</h1>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
@@ -102,16 +101,16 @@
             <input
               matInput
               placeholder="Ingrese fecha Creacion"
-              [matDatepicker]="picker"
+              [matDatepicker]="picker2"
               formControlName="fechaCreacion"
               [max]="formattedMaxDate"
             />
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle
               matIconSuffix
-              [for]="picker"
+              [for]="picker2"
             ></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <mat-datepicker #picker2></mat-datepicker>
             <mat-error
               *ngIf="obtenerControlCampo('fechaCreacion')?.errors?.['required']"
             >

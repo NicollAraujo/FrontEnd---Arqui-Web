@@ -56,6 +56,9 @@ import { CreaeditaComentarioComponent } from './components/comentario/creaedita-
 import { TareaMiembroAreaComponent } from './components/tarea-miembro-area/tarea-miembro-area.component';
 import { ListarTareaMiembroAreaComponent } from './components/tarea-miembro-area/listar-tarea-miembro-area/listar-tarea-miembro-area.component';
 import { CreaeditaTareaMiembroAreaComponent } from './components/tarea-miembro-area/creaedita-tarea-miembro-area/creaedita-tarea-miembro-area.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { BodyComponent } from './components/body/body.component';
+import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -96,6 +99,9 @@ import { CreaeditaTareaMiembroAreaComponent } from './components/tarea-miembro-a
     TareaMiembroAreaComponent,
     ListarTareaMiembroAreaComponent,
     CreaeditaTareaMiembroAreaComponent,
+    SidenavComponent,
+    BodyComponent,
+    SublevelMenuComponent,
   ],
   imports: [
     BrowserModule,
