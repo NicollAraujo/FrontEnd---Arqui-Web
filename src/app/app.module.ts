@@ -32,6 +32,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ListaUsuarioComponent } from './components/usuario/lista-usuario/lista-usuario.component';
 import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuario/creaedita-usuario.component';
+import { MiembroengrupoComponent } from './components/miembroengrupo/miembroengrupo.component';
+import { TareamiembroareaComponent } from './components/tareamiembroarea/tareamiembroarea.component';
+import { CreaditaMiembroengrupoComponent } from './components/miembroengrupo/creadita-miembroengrupo/creadita-miembroengrupo.component';
+import { ListarMiembroengrupoComponent } from './components/miembroengrupo/listar-miembroengrupo/listar-miembroengrupo.component';
+import { CreaditaTareamiembroareaComponent } from './components/tareamiembroarea/creadita-tareamiembroarea/creadita-tareamiembroarea.component';
+import { ListarTareamiembroareaComponent } from './components/tareamiembroarea/listar-tareamiembroarea/listar-tareamiembroarea.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +54,12 @@ import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuari
     UsuarioComponent,
     ListaUsuarioComponent,
     CreaeditaUsuarioComponent,
+    MiembroengrupoComponent,
+    TareamiembroareaComponent,
+    CreaditaMiembroengrupoComponent,
+    ListarMiembroengrupoComponent,
+    CreaditaTareamiembroareaComponent,
+    ListarTareamiembroareaComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,8 @@ import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-
 import { AreatrabajoComponent } from './components/areatrabajo/areatrabajo.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuario/creaedita-usuario.component';
+import { MiembroengrupoComponent } from './components/miembroengrupo/miembroengrupo.component';
+import { CreaditaMiembroengrupoComponent } from './components/miembroengrupo/creadita-miembroengrupo/creadita-miembroengrupo.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +23,14 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaAreatrabajoComponent },
       { path: 'ediciones/:id', component: CreaeditaAreatrabajoComponent },
+    ],
+  },
+  {
+    path: 'miembroEnGrupo',
+    component: MiembroengrupoComponent ,
+    children: [
+      { path: 'nuevo', component: CreaditaMiembroengrupoComponent },
+      { path: 'ediciones/:id', component: CreaditaMiembroengrupoComponent },
     ],
   },
   {
