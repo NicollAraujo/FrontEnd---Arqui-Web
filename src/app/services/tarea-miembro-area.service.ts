@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Comentario } from '../models/comentario';
 import { TareaMiembroArea } from '../models/tarea-miembro-area';
+import { TareaPorMiembro } from '../models/tarea-por-miembro';
 
 const base_url = environment.base;
 @Injectable({
@@ -13,6 +14,7 @@ export class TareaMiembroAreaService {
 
   private url = `${base_url}/api/tareaMiembroArea`
   private listaCambio = new Subject<TareaMiembroArea[]>();
+  private listaTareaMiembroArea = new Subject<TareaPorMiembro[]>();
   constructor(private http:HttpClient) { }
   list(){
     return this.http.get<TareaMiembroArea[]>(this.url);
@@ -38,5 +40,13 @@ export class TareaMiembroAreaService {
   delete(id:number)
   {
     return this.http.delete(`${this.url}/${id}`)
+  }
+  listTaskToMember(id:number)
+  {
+    return this.http.get<TareaPorMiembro[]>(`${this.url}/taskmember/${id}`)
+  }
+  getlistTaskToMember()
+  {
+    return this.listaTareaMiembroArea.asObservable();
   }
 }

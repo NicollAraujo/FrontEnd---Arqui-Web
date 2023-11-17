@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { Rol } from '../models/rol';
 import { HttpClient } from '@angular/common/http';
 import { AreaDeTrabajo } from '../models/areadetrabajo';
+import { UsuarioAreaTrabajo } from '../models/usuario-area-trabajo';
 const base_url = environment.base;
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class AreadetrabajoService {
 
   private url = `${base_url}/api/areasdetrabajo`
   private listaCambio = new Subject<AreaDeTrabajo[]>();
+  private listaUsuarioAreaTrabajo = new Subject<UsuarioAreaTrabajo[]>();
   constructor(private http:HttpClient) { }
   list(){
     return this.http.get<AreaDeTrabajo[]>(this.url);
@@ -37,5 +39,13 @@ export class AreadetrabajoService {
   delete(id:number)
   {
     return this.http.delete(`${this.url}/${id}`)
+  }
+  listAreaWorkUser(id:number)
+  {
+    return this.http.get<UsuarioAreaTrabajo[]>(`${this.url}/AreasUser/${id}`)
+  }
+  getlistAreaWorkUser()
+  {
+    return this.listaUsuarioAreaTrabajo.asObservable();
   }
 }

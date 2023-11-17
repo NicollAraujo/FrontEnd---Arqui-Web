@@ -14,7 +14,7 @@ import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-
 import { AreatrabajoComponent } from './components/areatrabajo/areatrabajo.component';
 import { ListarAreatrabajoComponent } from './components/areatrabajo/listar-areatrabajo/listar-areatrabajo.component';
 import { CreaeditaAreatrabajoComponent } from './components/areatrabajo/creaedita-areatrabajo/creaedita-areatrabajo.component';
-
+import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -59,6 +59,13 @@ import { CreaeditaTareaMiembroAreaComponent } from './components/tarea-miembro-a
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { BodyComponent } from './components/body/body.component';
 import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.component';
+import { ToolsComponent } from './components/tools/tools.component';
+import { Query1Component } from './components/tools/query1/query1.component';
+import { Query2Component } from './components/tools/query2/query2.component';
+import { Query3Component } from './components/tools/query3/query3.component';
+import { Query4Component } from './components/tools/query4/query4.component';
+import { Query5Component } from './components/tools/query5/query5.component';
+import { Query6Component } from './components/tools/query6/query6.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -102,6 +109,13 @@ import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.compon
     SidenavComponent,
     BodyComponent,
     SublevelMenuComponent,
+    ToolsComponent,
+    Query1Component,
+    Query2Component,
+    Query3Component,
+    Query4Component,
+    Query5Component,
+    Query6Component,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +133,8 @@ import { SublevelMenuComponent } from './components/sidenav/sublevel-menu.compon
     MatToolbarModule,
     MatTableModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },

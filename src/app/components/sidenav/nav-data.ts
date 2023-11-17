@@ -175,4 +175,42 @@ export const navbarData: INavbarData[] = [
     ],
     rol:'EMPLO'
   },
+  {
+    routelink:'',
+    icon:'fa-solid fa-toolbox',
+    label:'Tools',
+    rol:'ADMIN',
+    items:[
+      {
+        routelink:'tools/query1',
+        label:'Query 1',
+        rol:'ADMIN'
+      },
+      {
+        routelink:'tools/query2',
+        label:'Query 2',
+        rol:'ADMIN'
+      },
+      {
+        routelink:'tools/query3',
+        label:'Query 3',
+        rol:'ADMIN'
+      },
+      {
+        routelink:'tools/query4',
+        label:'Query 4',
+        rol:'ADMIN'
+      },
+      {
+        routelink:'tools/query5',
+        label:'Query 5',
+        rol:'ADMIN'
+      },
+      {
+        routelink:'tools/query6',
+        label:'Query 6',
+        rol:'ADMIN'
+      }
+    ]
+  }
 ];

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Query } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -33,6 +33,13 @@ import { TareaMiembroAreaComponent } from './components/tarea-miembro-area/tarea
 import { CreaeditaTareaMiembroAreaComponent } from './components/tarea-miembro-area/creaedita-tarea-miembro-area/creaedita-tarea-miembro-area.component';
 import { rolAdminGuard } from './guard/rol-admin.guard';
 import { rolEmploGuard } from './guard/rol-emplo.guard';
+import { Query1Component } from './components/tools/query1/query1.component';
+import { Query2Component } from './components/tools/query2/query2.component';
+import { Query3Component } from './components/tools/query3/query3.component';
+import { Query4Component } from './components/tools/query4/query4.component';
+import { Query5Component } from './components/tools/query5/query5.component';
+import { Query6Component } from './components/tools/query6/query6.component';
+import { ToolsComponent } from './components/tools/tools.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -40,12 +47,12 @@ const routes: Routes = [
   { path: 'panel', component: PanelComponent, canActivate: [rolAdminGuard] },
   {
     path: 'areaTrabajo',
-    component: AreatrabajoComponent ,
+    component: AreatrabajoComponent,
     children: [
       { path: 'nuevo', component: CreaeditaAreatrabajoComponent },
       { path: 'ediciones/:id', component: CreaeditaAreatrabajoComponent },
-    ]
-    , canActivate: [rolEmploGuard]
+    ],
+    canActivate: [rolEmploGuard],
   },
   {
     path: 'roles',
@@ -53,7 +60,8 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaRolComponent },
       { path: 'ediciones/:id', component: CreaeditaRolComponent },
-    ], canActivate: [rolAdminGuard]
+    ],
+    canActivate: [rolAdminGuard],
   },
   {
     path: 'usuarios',
@@ -61,7 +69,8 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaUsuarioComponent },
       { path: 'ediciones/:id', component: CreaeditaUsuarioComponent },
-    ], canActivate: [rolAdminGuard]
+    ],
+    canActivate: [rolAdminGuard],
   },
   {
     path: 'proyecto',
@@ -69,7 +78,8 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaProyectoComponent },
       { path: 'ediciones/:id', component: CreaeditaProyectoComponent },
-    ], canActivate: [rolAdminGuard]
+    ],
+    canActivate: [rolAdminGuard],
   },
   {
     path: 'comunicado',
@@ -77,7 +87,8 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaComunicadoComponent },
       { path: 'ediciones/:id', component: CreaeditaComunicadoComponent },
-    ], canActivate: [rolEmploGuard]
+    ],
+    canActivate: [rolEmploGuard],
   },
   {
     path: 'miembrodearea',
@@ -85,7 +96,8 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaMiembroareaComponent },
       { path: 'ediciones/:id', component: CreaeditaMiembroareaComponent },
-    ], canActivate: [rolEmploGuard]
+    ],
+    canActivate: [rolEmploGuard],
   },
   {
     path: 'miembrogrupo',
@@ -93,7 +105,8 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaMiembrogrupoComponent },
       { path: 'ediciones/:id', component: CreaeditaMiembrogrupoComponent },
-    ], canActivate: [rolAdminGuard]
+    ],
+    canActivate: [rolAdminGuard],
   },
   {
     path: 'grupo-proyecto',
@@ -101,7 +114,8 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaditaGrupoproyectoComponent },
       { path: 'ediciones/:id', component: CreaditaGrupoproyectoComponent },
-    ], canActivate: [rolAdminGuard]
+    ],
+    canActivate: [rolAdminGuard],
   },
   {
     path: 'tarea',
@@ -109,7 +123,8 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaTareaComponent },
       { path: 'ediciones/:id', component: CreaeditaTareaComponent },
-    ], canActivate: [rolEmploGuard]
+    ],
+    canActivate: [rolEmploGuard],
   },
   {
     path: 'comentario',
@@ -117,7 +132,8 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaComentarioComponent },
       { path: 'ediciones/:id', component: CreaeditaComentarioComponent },
-    ], canActivate: [rolAdminGuard]
+    ],
+    canActivate: [rolAdminGuard],
   },
   {
     path: 'tarea-miembro-area',
@@ -125,9 +141,40 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaTareaMiembroAreaComponent },
       { path: 'ediciones/:id', component: CreaeditaTareaMiembroAreaComponent },
-    ], canActivate: [rolAdminGuard]
+    ],
+    canActivate: [rolAdminGuard],
   },
-  
+  {
+    path: 'tools',
+    component: ToolsComponent,
+    children: [
+      {
+        path: 'query1',
+        component: Query1Component,
+      },
+      {
+        path: 'query2',
+        component: Query2Component,
+      },
+      {
+        path: 'query3',
+        component: Query3Component,
+      },
+      {
+        path: 'query4',
+        component: Query4Component,
+      },
+      {
+        path: 'query5',
+        component: Query5Component,
+      },
+      {
+        path: 'query6',
+        component: Query6Component,
+      },
+    ],
+  },
+
   { path: '**', pathMatch: 'full', redirectTo: 'login' },
 ];
 
