@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comentario',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./comentario.component.scss']
 })
 export class ComentarioComponent {
+  constructor(public route:ActivatedRoute){
 
+  }
 }

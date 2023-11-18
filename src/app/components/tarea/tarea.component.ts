@@ -8,6 +8,6 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TareaComponent {
   constructor( public route:ActivatedRoute){
-  }
 
+  }
 }

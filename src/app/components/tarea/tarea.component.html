@@ -1,1 +1,5 @@
-<p>tarea works!</p>
+<router-outlet></router-outlet>
+<div [hidden]="route.children.length!==0">
+    <!-- <app-navbar></app-navbar> -->
+   <app-listar-tarea></app-listar-tarea>
+</div>

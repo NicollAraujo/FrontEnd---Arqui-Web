@@ -1,15 +1,14 @@
-import { GP } from "./gp"
-//import { Usuario } from "./usuario"
-//import { AreaDeTrabajo } from "./areadetrabajo"
+import { AreaDeTrabajo } from "./areadetrabajo";
+import { GrupoDeProyecto } from "./grupo-proyecto";
+import { Usuario } from "./usuario";
 
-export class Comunicado{
-    idComunicado:number=0
-    titulo:String=""
-    descripcion:String=""
-    fechaCreacion:Date=new Date(Date.now())
-    //usuario:Usuario= new Usuario()
-    //areadetrabajo:AreaDeTrabajo=new AreaDeTrabajo()
-    GrupoDeProyecto:GP = new GP()
-}
-
-//AGREGAR LAS IMPORTACIONES DE LAS CLASES QUE FALTAN
+export class Comunicado {
+    idComunicado: number = 0;
+    titulo: string = "";
+    descripcion: string = "";
+    fechaCreacion: string = ""; 
+    active: boolean | undefined;
+    usuario: Usuario = new Usuario();
+    areaDeTrabajo: AreaDeTrabajo = new AreaDeTrabajo();
+    grupoDeProyecto: GrupoDeProyecto = new GrupoDeProyecto();
+  }

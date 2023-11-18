@@ -2,7 +2,6 @@ import { Component,ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { AreaDeTrabajo } from 'src/app/models/areadetrabajo';
-import { Rol } from 'src/app/models/rol';
 import { AreadetrabajoService } from 'src/app/services/areadetrabajo.service';
 
 @Component({
@@ -55,4 +54,3 @@ export class ListarAreatrabajoComponent {
     
   }
 }
-///lsitar ts

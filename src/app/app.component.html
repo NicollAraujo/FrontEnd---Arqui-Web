@@ -1,17 +1,8 @@
-<mat-toolbar color="primary">
-  <mat-icon>menu</mat-icon>
-  <button mat-button [matMenuTriggerFor]="menuGP">GrupoDeProyecto</button>
-  <button mat-button [matMenuTriggerFor]="menuComunicado">Comunicado</button>
-</mat-toolbar>
 
-<mat-menu #menuGP="matMenu">
-  <button mat-menu-item routerLink="/grupos/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/grupos">Listar</button>
-</mat-menu>
-
-<mat-menu #menuComunicado="matMenu">
-  <button mat-menu-item routerLink="/comunicados/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/comunicados">Listar</button>
-</mat-menu>
-
-<router-outlet></router-outlet>
+<ng-container *ngIf="shouldShowSideNav()">
+    <app-sidenav (onToggleSideNav)="onToggleSideNav($event)"></app-sidenav>
+</ng-container>
+<app-body [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-body>
+<div *ngIf="shouldShowLogin()">
+    <router-outlet></router-outlet>
+</div>

@@ -1,43 +1,51 @@
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { Comunicado } from '../models/comunicado'
-import {  Observable, Subject } from 'rxjs';
+import { environment } from '../environments/environment';
+import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { Comunicado } from '../models/comunicado';
+import { ComentarioTarea } from '../models/comentarios-tarea';
+import { CantidadGrupoProyecto } from '../models/cantidad-grupo-proyecto';
 const base_url = environment.base;
-
 @Injectable({
   providedIn: 'root'
 })
 export class ComunicadoService {
-  private url = `${base_url}/comunicados`;
+
+  private url = `${base_url}/api/comunicados`
   private listaCambio = new Subject<Comunicado[]>();
-  constructor(private http: HttpClient) {}
-  list() {
+  private listaCantidadGrupo = new Subject<CantidadGrupoProyecto[]>();
+  constructor(private http:HttpClient) { }
+  list(){
     return this.http.get<Comunicado[]>(this.url);
   }
-
-  insert(uni: Comunicado) {
-    return this.http.post(this.url, uni);
+  insert(comunicado: Comunicado){
+    return this.http.post(this.url,comunicado);
   }
-
-  setList(listaNueva: Comunicado[]) {
+  setList(listaNueva:Comunicado[])
+  {
     this.listaCambio.next(listaNueva);
   }
-
-  getList() {
+  getList(){
     return this.listaCambio.asObservable();
   }
-  listId(id: number) {
-    return this.http.get<Comunicado>(`${this.url}/${id}`);
+  listId(id:number)
+  {
+    return this.http.get<Comunicado>(`${this.url}/${id}`)
   }
-  update(u: Comunicado) {
-    return this.http.put(this.url, u);
+  update(r:Comunicado)
+  {
+    return this.http.put(this.url,r);
   }
-  delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+  delete(id:number)
+  {
+    return this.http.delete(`${this.url}/${id}`)
   }
-
-  buscar(fecha: string): Observable<Comunicado[]> {
-    return this.http.post<Comunicado[]>(`${this.url}/buscar`, { fecha: fecha });
+  listquantityAnnouncementsGroupProjects()
+  {
+    return this.http.get<CantidadGrupoProyecto[]>(`${this.url}/cantidadGP`)
+  }
+  getquantityAnnouncementsGroupProjects()
+  {
+    return this.listaCantidadGrupo.asObservable();
   }
 }

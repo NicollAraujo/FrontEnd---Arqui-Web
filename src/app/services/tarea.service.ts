@@ -3,8 +3,8 @@ import { environment } from '../environments/environment';
 import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Tarea } from '../models/tarea';
+import { DescripcionTareaProyecto } from '../models/descripcion-tarea-proyecto';
 const base_url = environment.base;
-
 @Injectable({
   providedIn: 'root'
 })
@@ -12,13 +12,13 @@ export class TareaService {
 
   private url = `${base_url}/api/tareas`
   private listaCambio = new Subject<Tarea[]>();
+  private listaDescripcionProject = new Subject<DescripcionTareaProyecto[]>();
   constructor(private http:HttpClient) { }
-
   list(){
     return this.http.get<Tarea[]>(this.url);
   }
-  insert(Tarea: Tarea){
-    return this.http.post(this.url,Tarea);
+  insert(tarea: Tarea){
+    return this.http.post(this.url,tarea);
   }
   setList(listaNueva:Tarea[])
   {
@@ -31,12 +31,20 @@ export class TareaService {
   {
     return this.http.get<Tarea>(`${this.url}/${id}`)
   }
-  update(t:Tarea)
+  update(r:Tarea)
   {
-    return this.http.put(this.url,t);
+    return this.http.put(this.url,r);
   }
   delete(id:number)
   {
     return this.http.delete(`${this.url}/${id}`)
+  }
+  listDescriptionTaskProject()
+  {
+    return this.http.get<DescripcionTareaProyecto[]>(`${this.url}/descripciontarea`)
+  }
+  getlistDescriptionTaskProject()
+  {
+    return this.listaDescripcionProject.asObservable();
   }
 }

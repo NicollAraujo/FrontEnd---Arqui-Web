@@ -23,8 +23,9 @@
     <mat-menu #person="matMenu">
       <button mat-menu-item [matMenuTriggerFor]="usuario">Usuario</button>
       <button mat-menu-item [matMenuTriggerFor]="roles">Rol</button>
-      <button mat-menu-item [matMenuTriggerFor]="areatrabajo">Area Trabajo</button>
-      <button mat-menu-item [matMenuTriggerFor]="miembroArea">Miembro de Area</button>
+      <button mat-menu-item [matMenuTriggerFor]="areatrabajo">
+        Area Trabajo
+      </button>
     </mat-menu>
 
     <mat-menu #usuario="matMenu">
@@ -42,9 +43,49 @@
       <button mat-menu-item [routerLink]="'/areaTrabajo'">Listar</button>
     </mat-menu>
 
-    <mat-menu #miembroArea="matMenu">
-      <button mat-menu-item [routerLink]="'/miembroArea/nuevo'">Crear</button>
-      <button mat-menu-item [routerLink]="'/miembroArea'">Listar</button>
+
+
+    <button mat-button [matMenuTriggerFor]="proyect">Proyect</button>
+
+    <mat-menu #proyect="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="proyecto">Proyecto</button>
+      <button mat-menu-item [matMenuTriggerFor]="grupo_proyecto">Grupo Proyecto</button>
+      <button mat-menu-item [matMenuTriggerFor]="miembro_grupo">Miembro en Grupo</button>
     </mat-menu>
+
+    <mat-menu #miembro_grupo="matMenu">
+      <button mat-menu-item [routerLink]="'/miembrogrupo/nuevo'">Crear</button>
+      <button mat-menu-item [routerLink]="'/miembrogrupo'">Listar</button>
+    </mat-menu>
+
+    <mat-menu #proyecto="matMenu">
+      <button mat-menu-item [routerLink]="'/proyecto/nuevo'">Crear</button>
+      <button mat-menu-item [routerLink]="'/proyecto'">Listar</button>
+    </mat-menu>
+
+    <mat-menu #grupo_proyecto="matMenu">
+      <button mat-menu-item [routerLink]="'/grupo-proyecto/nuevo'">Crear</button>
+      <button mat-menu-item [routerLink]="'/grupo-proyecto'">Listar</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="area">Area</button>
+
+    <mat-menu #area="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="miembro_area">Miembro de Area</button>
+      <button mat-menu-item [matMenuTriggerFor]="comentario">Comentario</button>
+    </mat-menu>
+
+    <mat-menu #miembro_area="matMenu">
+      <button mat-menu-item [routerLink]="'/miembrodearea/nuevo'">Crear</button>
+      <button mat-menu-item [routerLink]="'/miembrodearea'">Listar</button>
+    </mat-menu>
+
+    <mat-menu #comentario="matMenu">
+      <button mat-menu-item [routerLink]="'/comentario/nuevo'">Crear</button>
+      <button mat-menu-item [routerLink]="'/comentario'">Listar</button>
+    </mat-menu>
+
+    <button mat-button color="warn" (click)="cerrarSesion()" >Cerrar Sesion</button>
+
   </div>
 </mat-toolbar>
