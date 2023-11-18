@@ -1,6 +1,5 @@
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-<<<<<<< HEAD
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { authGuard } from './guard/auth.guard';
@@ -30,14 +29,6 @@ const routes: Routes = [
       { path: 'ediciones/:id', component: CreaeditaAreatrabajoComponent },
     ],
   },
-=======
-import { GpComponent} from './components/GrupoDeProyecto/gp/gp.component';
-import { CreaeditaGpComponent} from './components/GrupoDeProyecto/creaedita-gp/creaedita-gp.component';
-import { ComunicadoComponent } from './components/Comunicado/comunicado/comunicado.component';
-import { CreaeditaComunicadoComponent } from './components/Comunicado/creaedita-comunicado/creaedita-comunicado.component';
-
-const routes: Routes = [
->>>>>>> dev-alvaro
   {
     path: 'grupos',
     component: GpComponent,
@@ -46,7 +37,6 @@ const routes: Routes = [
       { path: 'ediciones/:id', component: CreaeditaGpComponent },
     ],
   },
-<<<<<<< HEAD
   {
     path: 'usuarios',
     component: UsuarioComponent,
@@ -80,18 +70,6 @@ const routes: Routes = [
     ],
   },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },
-=======
-
-  {
-    path: 'comunicados',
-    component: ComunicadoComponent,
-    children: [
-      { path: 'nuevo', component: CreaeditaComunicadoComponent},
-      { path: 'ediciones/:id', component: CreaeditaComunicadoComponent },
-    ],
-  },
-
->>>>>>> dev-alvaro
 ];
 
 @NgModule({

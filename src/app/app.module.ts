@@ -20,7 +20,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
-<<<<<<< HEAD
 import { MatTableModule } from '@angular/material/table';
 import { AuthInterceptor } from './interceptor';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -61,20 +60,6 @@ import { ListarMiembroareaComponent } from './components/miembroarea/listar-miem
     MiembroareaComponent,
     CreaeditaMiembroareaComponent,
     ListarMiembroareaComponent
-=======
-import { ListarComunicadoComponent } from './components/Comunicado/listar-comunicado/listar-comunicado.component';
-import { CreaeditaComunicadoComponent } from './components/Comunicado/creaedita-comunicado/creaedita-comunicado.component';
-
-@NgModule({
-  declarations: [
-    AppComponent,
-    GpComponent,
-    ListarGpComponent,
-    CreaeditaGpComponent,
-    ComunicadoComponent,
-    ListarComunicadoComponent,
-    CreaeditaComunicadoComponent
->>>>>>> dev-alvaro
   ],
   imports: [
     BrowserModule,
