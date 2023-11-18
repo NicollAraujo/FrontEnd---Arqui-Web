@@ -10,8 +10,10 @@ import { CreaeditaRolComponent } from './components/rol/creaedita-rol/creaedita-
 import { AreatrabajoComponent } from './components/areatrabajo/areatrabajo.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { CreaeditaUsuarioComponent } from './components/usuario/creaedita-usuario/creaedita-usuario.component';
-import { MiembroengrupoComponent } from './components/miembroengrupo/miembroengrupo.component';
-import { CreaditaMiembroengrupoComponent } from './components/miembroengrupo/creadita-miembroengrupo/creadita-miembroengrupo.component';
+import { TareaComponent } from './components/tarea/tarea.component';
+import { CreaeditaTareaComponent } from './components/tarea/creaedita-tarea/creaedita-tarea.component';
+import { ComentarioComponent } from './components/comentario/comentario.component';
+import { CreaeditaComentarioComponent } from './components/comentario/creaedita-comentario/creaedita-comentario.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -23,14 +25,6 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaAreatrabajoComponent },
       { path: 'ediciones/:id', component: CreaeditaAreatrabajoComponent },
-    ],
-  },
-  {
-    path: 'miembroEnGrupo',
-    component: MiembroengrupoComponent ,
-    children: [
-      { path: 'nuevo', component: CreaditaMiembroengrupoComponent },
-      { path: 'ediciones/:id', component: CreaditaMiembroengrupoComponent },
     ],
   },
   {
@@ -47,6 +41,22 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaUsuarioComponent },
       { path: 'ediciones/:id', component: CreaeditaUsuarioComponent },
+    ],
+  }, 
+  {
+    path: 'tarea',
+    component: TareaComponent,
+    children: [
+      { path: 'nuevo', component: CreaeditaTareaComponent},
+      { path: 'ediciones/:id', component: CreaeditaTareaComponent },
+    ],
+  },
+  {
+    path: 'comentario',
+    component: ComentarioComponent,
+    children: [
+      { path: 'nuevo', component: CreaeditaComentarioComponent },
+      { path: 'ediciones/:id', component: CreaeditaComentarioComponent },
     ],
   },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },

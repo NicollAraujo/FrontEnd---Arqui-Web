@@ -7,7 +7,7 @@
 </head>
 <body>
     <app-navbar></app-navbar>
-    <div class="container" style="text-align: center">
+    <div class="container" style="text-align: center; padding-top: 10%;" >
         <h1>Registro de Area de Trabajo</h1>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
           <mat-form-field class="example-full-width" *ngIf="edicion">
@@ -25,7 +25,7 @@
             <mat-error
               *ngIf="obtenerControlCampo('nombre')?.errors?.['required']"
             >
-              La nombre es obligatorio.
+              El nombre es obligatorio.
             </mat-error>
           </mat-form-field>
           <br />
@@ -39,12 +39,12 @@
             <mat-error
               *ngIf="obtenerControlCampo('descripcion')?.errors?.['required']"
             >
-              La descripcion es obligatorio.
+              La descripcion es obligatoria.
             </mat-error>
           </mat-form-field>
           <br />
           <div class="buttons">
-              <button mat-raised-button color="accent">Aceptar</button>
+              <button mat-raised-button color="accent">Registrar</button>
               <button mat-raised-button color="warn" routerLink="/areaTrabajo">
                 Cancelar
               </button>

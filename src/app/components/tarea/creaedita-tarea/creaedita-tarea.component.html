@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,11 @@
 <body>
     <app-navbar></app-navbar>
     <div class="container" style="text-align: center">
-        <h1>Registro de Usuario</h1>
+        <h1>Registro de Tarea</h1>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
           <mat-form-field class="example-full-width" *ngIf="edicion">
-            <mat-label>idUsuario</mat-label>
-            <input matInput placeholder="Id" formControlName="idUsuario" readonly=""/>
+            <mat-label>idTarea</mat-label>
+            <input matInput placeholder="Id" formControlName="idTarea" readonly=""/>
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
@@ -32,14 +32,14 @@
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Correo</mat-label>
+            <mat-label>Descripcion</mat-label>
             <input
               matInput
-              placeholder="Correo"
-              formControlName="correo"
+              placeholder="Descripcion"
+              formControlName="Descripcion"
             />
             <mat-error
-              *ngIf="obtenerControlCampo('correo')?.errors?.['required']"
+              *ngIf="obtenerControlCampo('Descripcion')?.errors?.['required']"
             >
             El correo es obligatorio.
             </mat-error>
@@ -48,9 +48,9 @@
           <mat-form-field appearance="fill" class="example-full-width">
             <input
               matInput
-              placeholder="Ingrese fecha"
+              placeholder="Ingrese fecha de creación"
               [matDatepicker]="picker"
-              formControlName="fechaNacimiento"
+              formControlName="fechaCreacion"
               [max]="formattedMaxDate"
             />
             <mat-hint>MM/DD/YYYY</mat-hint>
@@ -60,60 +60,70 @@
             ></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
             <mat-error
-              *ngIf="obtenerControlCampo('fechaNacimiento')?.errors?.['required']"
+              *ngIf="obtenerControlCampo('fechaCreacion')?.errors?.['required']"
             >
               La fecha de creación es obligatoria.
             </mat-error>
           </mat-form-field>
           <br />
+          <mat-form-field appearance="fill" class="example-full-width">
+            <input
+              matInput
+              placeholder="Ingrese fecha límite"
+              [matDatepicker]="picker"
+              formControlName="fechaLimite"
+              [max]="formattedMaxDate"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error
+              *ngIf="obtenerControlCampo('fechaLimite')?.errors?.['required']"
+            >
+              La fecha límite es obligatoria.
+            </mat-error>
+          </mat-form-field>
+          <br />
           <mat-form-field class="example-full-width">
-            <mat-label>Roles</mat-label>
-            <mat-select formControlName="rol">
+            <mat-label>GrupoDeProyecto_id</mat-label>
+            <mat-select formControlName="grupoDeProyecto_id">
               <mat-option
-                *ngFor="let p of listRoles"
-                [value]="p.idRol"
+                *ngFor="let p of listGrupoProyecto"
+                [value]="p.idGrupoProyecto"
               >
                 {{ p.descripcion }}
               </mat-option>
             </mat-select>
             <mat-error
-              *ngIf="obtenerControlCampo('rol')?.errors?.['required']"
+              *ngIf="obtenerControlCampo('grupoDeProyecto_id')?.errors?.['required']"
             >
-              El rol es obligatorio.
+              El ID del Grupo de Proyecto es obligatorio.
             </mat-error>
           </mat-form-field>
           <br />
-          <mat-form-field class="example-full-width">
-            <mat-label>Username</mat-label>
-            <input
-              matInput
-              placeholder="Username"
-              formControlName="userName"
-            />
+         <mat-form-field class="example-full-width">
+            <mat-label>Proyecto_id</mat-label>
+            <mat-select formControlName="Proyecto_id">
+              <mat-option
+                *ngFor="let p of listProyecto"
+                [value]="p.idProyecto"
+              >
+                {{ p.descripcion }}
+              </mat-option>
+            </mat-select>
             <mat-error
-              *ngIf="obtenerControlCampo('userName')?.errors?.['required']"
+              *ngIf="obtenerControlCampo('Proyecto_id')?.errors?.['required']"
             >
-            El Username es obligatorio.
-            </mat-error>
-          </mat-form-field>
-          <br />
-          <mat-form-field class="example-full-width">
-            <mat-label>Contraseña</mat-label>
-            <input
-              matInput
-              placeholder="Contraseña"
-              formControlName="contrasena"
-            />
-            <mat-error
-              *ngIf="obtenerControlCampo('contrasena')?.errors?.['required']"
-            >
-              La Contraseña es obligatoria.
+              El ID del Proyecto es obligatorio.
             </mat-error>
           </mat-form-field>
           <br />
           <div class="buttons">
               <button mat-raised-button color="accent">Registrar</button>
-              <button mat-raised-button color="warn" routerLink="/usuarios">
+              <button mat-raised-button color="warn" routerLink="/tareas">
                 Cancelar
               </button>
           </div>
@@ -123,4 +133,6 @@
 </body>
 </html>
 
+
+-->
 
