@@ -35,7 +35,7 @@ import { CreaeditaComunicadoComponent } from './components/Comunicado/creaedita-
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
