@@ -14,6 +14,8 @@ import { TareaComponent } from './components/tarea/tarea.component';
 import { CreaeditaTareaComponent } from './components/tarea/creaedita-tarea/creaedita-tarea.component';
 import { ComentarioComponent } from './components/comentario/comentario.component';
 import { CreaeditaComentarioComponent } from './components/comentario/creaedita-comentario/creaedita-comentario.component';
+import { MiembroareaComponent } from './components/miembroarea/miembroarea.component';
+import { CreaeditaMiembroareaComponent } from './components/miembroarea/creaedita-miembroarea/creaedita-miembroarea.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -57,6 +59,14 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CreaeditaComentarioComponent },
       { path: 'ediciones/:id', component: CreaeditaComentarioComponent },
+    ],
+  },
+  {
+    path: 'miembroArea',
+    component: MiembroareaComponent,
+    children: [
+      { path: 'nuevo', component: CreaeditaMiembroareaComponent },
+      { path: 'ediciones/:id', component: CreaeditaMiembroareaComponent },
     ],
   },
   { path: '**', pathMatch: 'full', redirectTo: 'home' },

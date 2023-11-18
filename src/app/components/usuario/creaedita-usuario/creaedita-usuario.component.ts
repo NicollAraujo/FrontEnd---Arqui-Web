@@ -60,16 +60,16 @@ export class CreaeditaUsuarioComponent {
   }
 
   aceptar(): void {
-    this.rS.listId(this.form.value.rol).subscribe((rolSelect)=>{
+    this.rS.listId(this.form.value.rol).subscribe((rolSelect) => {
       if (this.form.valid) {
         this.usuario.idUsuario = this.form.value.idUsuario;
         this.usuario.nombre = this.form.value.nombre;
         this.usuario.correo = this.form.value.correo;
         this.usuario.fechaNacimiento = this.form.value.fechaNacimiento;
-        this.usuario.rol=rolSelect;
+        this.usuario.rol = rolSelect;
         this.usuario.userName = this.form.value.correo;
         this.usuario.active = true;
-  
+
         this.pS
           .hashPassword(this.form.value.contrasena)
           .then((hashedPassword) => {
@@ -81,9 +81,9 @@ export class CreaeditaUsuarioComponent {
                 });
               });
             } else {
-              console.log(this.usuario)
+              console.log(this.usuario);
               this.uS.insert(this.usuario).subscribe((data) => {
-                console.log(data)
+                console.log(data);
                 this.uS.list().subscribe((data) => {
                   this.uS.setList(data);
                 });
@@ -94,8 +94,7 @@ export class CreaeditaUsuarioComponent {
       } else {
         this.mensaje = 'Por favor complete todos los campos obligatorios.';
       }
-    } )
-   
+    });
   }
 
   init() {

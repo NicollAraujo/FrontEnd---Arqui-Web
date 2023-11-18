@@ -38,6 +38,9 @@ import { ListarTareaComponent } from './components/tarea/listar-tarea/listar-tar
 import { CreaeditaTareaComponent } from './components/tarea/creaedita-tarea/creaedita-tarea.component';
 import { ListarComentarioComponent } from './components/comentario/listar-comentario/listar-comentario.component';
 import { CreaeditaComentarioComponent } from './components/comentario/creaedita-comentario/creaedita-comentario.component';
+import { MiembroareaComponent } from './components/miembroarea/miembroarea.component';
+import { CreaeditaMiembroareaComponent } from './components/miembroarea/creaedita-miembroarea/creaedita-miembroarea.component';
+import { ListarMiembroareaComponent } from './components/miembroarea/listar-miembroarea/listar-miembroarea.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,6 +63,9 @@ import { CreaeditaComentarioComponent } from './components/comentario/creaedita-
     CreaeditaTareaComponent,
     ListarComentarioComponent,
     CreaeditaComentarioComponent,
+    MiembroareaComponent,
+    CreaeditaMiembroareaComponent,
+    ListarMiembroareaComponent
   ],
   imports: [
     BrowserModule,
