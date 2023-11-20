@@ -50,8 +50,8 @@ export class CreaditaGrupoproyectoComponent {
       proyecto: ['', Validators.required]
     });
     this.pS.list().subscribe((data) => {
-      const dataFiltrados = data.filter(item => item.active === true);
-      this.listaProyecto = dataFiltrados;
+      const dataFilter = data.filter(item => item.active === true)
+      this.listaProyecto = dataFilter;
     });
   }
 
