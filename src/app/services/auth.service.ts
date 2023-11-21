@@ -8,7 +8,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class AuthService {
 
-  authURL = 'https://springredcorp.azurewebsites.net/authenticate';
+  authURL = 'http://localhost:8080/authenticate';
 
   constructor(private http:HttpClient,
     private jwtHelper: JwtHelperService) { }
@@ -32,7 +32,7 @@ export class AuthService {
     // let headers = new HttpHeaders()
     // .set("Authorization",`Bearer ${localStorage.getItem('jwttoken')}`)
     // console.log(headers)
-    return this.http.get("https://springredcorp.azurewebsites.net//api/areasdetrabajo/panel")
+    return this.http.get("http://localhost:8080/api/areasdetrabajo/panel")
   }
   showRole(){
     let token = localStorage.getItem("jwttoken");

@@ -1,4 +1,4 @@
 export const environment={
     production:false,
-    base:"https://springredcorp.azurewebsites.net"
+    base:"http://localhost:8080"
 }
